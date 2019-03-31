@@ -45,9 +45,15 @@ public class arithmeticEvaluation {
 	}
 
 	private static int evaluateExpressionTree(Node root) {
+		
+		// For any recursive problem, we need to specify where we stop.
 		if(!isOperator(root.value)) {
 			return Integer.parseInt(root.value);
 		}
+		
+		// Think about what you would do if you have just root,left and right
+		// you would just consider the root's expression based on which you evaluate left and 
+		// right
 		
 		int leftVal = evaluateExpressionTree(root.left);
 		int rightVal = evaluateExpressionTree(root.right);
